@@ -219,7 +219,7 @@ ordered_list: list = sorted(number_list)
 print(number_list, ordered_list, sep= "\n") """
 
 # with varied lists and foreseeing use in another script.py
-import random
+""" import random
 
 def sort_numbers_list(number_list: list) -> list:
     try:
@@ -238,4 +238,4 @@ def sort_numbers_list(number_list: list) -> list:
 nome = "Jadeson"
 
 # Ordenando a lista
-print(sort_numbers_list(nome))
+print(sort_numbers_list(nome)) """
