@@ -135,3 +135,107 @@ print(cart, type(cart)) """
 json_cart: json = json.dumps(cart) # transforming python dictionary to json
 
 print(json_cart, type(json_cart)) """
+
+# CSV
+
+# Readign csv file with native lib
+""" import csv
+
+path: str = "example.csv"
+
+with open(file= path, mode= "r", encoding= "utf-8") as file:
+    csv_reader: csv.DictReader = csv.DictReader(file)
+
+    data = [line for line in csv_reader]
+
+print(data) """
+
+# FUNCTIONS
+
+# without function
+
+# Implementação do algoritmo de ordenação por seleção
+# i = 1, [34, 64, 25, 12, 22, 11, 90];
+# i = 2, [34, 25, 64, 12, 22, 11, 90];
+# i = 3, [34, 25, 12, 64, 22, 11, 90].
+
+""" lista = [64, 34, 25, 12, 22, 11, 90]
+
+for i in range(len(lista)):
+    for j in range(i+1, len(lista)):
+        if lista[i] > lista[j]:
+            lista[i], lista[j] = lista[j], lista[i]
+
+# Ordenando a lista
+print("Lista ordenada com função personalizada:", lista) """
+
+# with function
+""" number_list = [64, 34, 25, 12, 22, 11, 90]
+
+def sort_numbers_list(number_list: list) -> list:
+    ordered_list = number_list.copy()
+
+    for i in range(len(ordered_list)):
+        for j in range(i+1, len(ordered_list)):
+            if ordered_list[i] > ordered_list[j]:
+                ordered_list[i], ordered_list[j] = ordered_list[j], ordered_list[i]
+
+    return ordered_list
+
+# Ordenando a lista
+print(sort_numbers_list(number_list)) """
+
+# with varied lists and foreseeing use in another script.py
+""" import random
+
+def sort_numbers_list(number_list: list) -> list:
+    ordered_list = number_list.copy()
+
+    for i in range(len(ordered_list)):
+        for j in range(i+1, len(ordered_list)):
+            if ordered_list[i] > ordered_list[j]:
+                ordered_list[i], ordered_list[j] = ordered_list[j], ordered_list[i]
+
+    return ordered_list
+
+if __name__ == "__main__":
+    len_list = 10
+    min_value = 1
+    max_value = 100
+
+    aleatory_list_1: list = [random.randint(min_value, max_value) for _ in range(len_list)]
+    aleatory_list_2: list = [random.randint(min_value, max_value) for _ in range(len_list)]
+    aleatory_list_3: list = [random.randint(min_value, max_value) for _ in range(len_list)]
+    
+    # Ordenando a lista
+    print(sort_numbers_list(aleatory_list_1))
+    print(sort_numbers_list(aleatory_list_2))
+    print(sort_numbers_list(aleatory_list_3)) """
+
+# with bulti-in function sorted()
+""" number_list: list = [64, 34, 25, 12, 22, 11, 90]
+ordered_list: list = sorted(number_list)
+
+print(number_list, ordered_list, sep= "\n") """
+
+# with varied lists and foreseeing use in another script.py
+import random
+
+def sort_numbers_list(number_list: list) -> list:
+    try:
+        ordered_list = number_list.copy()
+
+        for i in range(len(ordered_list)):
+            for j in range(i+1, len(ordered_list)):
+                if ordered_list[i] > ordered_list[j]:
+                    ordered_list[i], ordered_list[j] = ordered_list[j], ordered_list[i]
+
+        return ordered_list
+    
+    except:
+        print("Error: Deu erro!")
+
+nome = "Jadeson"
+
+# Ordenando a lista
+print(sort_numbers_list(nome))
