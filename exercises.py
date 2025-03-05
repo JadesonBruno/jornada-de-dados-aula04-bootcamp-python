@@ -222,3 +222,71 @@ for word in text:
     words_count[word] = words_count.get(word, 0) + 1
 
 print(words_count) """
+
+# 16. Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
+""" import random
+
+def add_numbers(numbers_list: list) -> list:
+    return sum(numbers_list) 
+
+def generate_random_number(min_value: float, max_value: float, list_size: int) -> list:
+    numbers_list = random.sample((range(min_value, max_value + 1)), list_size)
+    print(numbers_list)
+    return numbers_list
+
+print(add_numbers(generate_random_number(0, 1000, 10))) """
+
+# 17. Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+""" def validate_prime_number(number: int) -> bool:
+    number_prime = True
+
+    if number <= 1:
+        number_prime = False
+    for i in range(2, int(number**0.5)):
+        if number % i == 0:
+            number_prime = False
+
+    return f"Number Prime is {number_prime}"
+
+number = int(input("Enter a integer: "))
+
+print(validate_prime_number(number)) """
+
+# 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
+""" def return_reverse_string(string: str) -> str:
+    return string[::-1]
+
+string = input("Enter a string: ")
+
+print(return_reverse_string(string)) """
+
+# 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. 
+# A função deve retornar todas as combinações de pares na lista que somem ao número dado.
+""" def find_pairs(numbers: list, target: int) -> list:
+    pairs = []
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            if numbers[i] + numbers[j] == target:
+                pairs.append((numbers[i], numbers[j]))
+
+    return pairs    
+
+numbers = [2, 4, 3, 5, 7, 8, 1, 9]
+target = 10
+
+print(find_pairs(numbers, target)) """
+
+# 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas.
+""" def sort_keys(fruits_dictionary: dict) -> dict:
+    fruits_list = sorted(fruits_dictionary.keys())
+
+    return fruits_list
+
+dicionario_exemplo = {
+    "banana": 3,
+    "maçã": 5,
+    "laranja": 2,
+    "abacaxi": 4
+}
+
+print(sort_keys(dicionario_exemplo)) """
